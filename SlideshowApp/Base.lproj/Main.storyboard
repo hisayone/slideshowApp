@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,73 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SlideshowApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a5J-y5-EYG">
+                                <rect key="frame" x="57" y="134" width="300" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="fDg-f4-Nja"/>
+                                    <constraint firstAttribute="height" constant="180" id="uzX-bZ-YhZ"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQn-3u-w6w">
+                                <rect key="frame" x="56" y="334" width="66" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="66" id="52E-9U-6FF"/>
+                                    <constraint firstAttribute="width" constant="66" id="9ls-gh-vcv"/>
+                                    <constraint firstAttribute="height" constant="30" id="tQn-ZC-U6d"/>
+                                </constraints>
+                                <state key="normal" title="進む"/>
+                                <connections>
+                                    <action selector="next:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K8K-46-lhv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTE-uq-fdh">
+                                <rect key="frame" x="182" y="334" width="50" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="DqT-9r-5rL"/>
+                                    <constraint firstAttribute="width" constant="50" id="RjF-cI-lxH"/>
+                                </constraints>
+                                <state key="normal" title="戻る"/>
+                                <connections>
+                                    <action selector="prev:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mUx-Ye-adi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKR-rt-O3A">
+                                <rect key="frame" x="292" y="334" width="66" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="LhU-Js-0ah"/>
+                                    <constraint firstAttribute="width" constant="66" id="TsE-HN-Zt1"/>
+                                </constraints>
+                                <state key="normal" title="再生/停止"/>
+                                <connections>
+                                    <action selector="startPause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CcR-z7-yKl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="a5J-y5-EYG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9aD-nX-DRa"/>
+                            <constraint firstItem="CQn-3u-w6w" firstAttribute="top" secondItem="a5J-y5-EYG" secondAttribute="bottom" constant="20" id="B25-08-UOv"/>
+                            <constraint firstItem="a5J-y5-EYG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="90" id="EYK-cS-onR"/>
+                            <constraint firstItem="pKR-rt-O3A" firstAttribute="leading" secondItem="TTE-uq-fdh" secondAttribute="trailing" constant="60" id="G9u-9B-0I5"/>
+                            <constraint firstItem="pKR-rt-O3A" firstAttribute="top" secondItem="a5J-y5-EYG" secondAttribute="bottom" constant="20" id="Hzb-gh-ChR"/>
+                            <constraint firstItem="TTE-uq-fdh" firstAttribute="top" secondItem="a5J-y5-EYG" secondAttribute="bottom" constant="20" id="RqA-YR-c9R"/>
+                            <constraint firstItem="TTE-uq-fdh" firstAttribute="leading" secondItem="CQn-3u-w6w" secondAttribute="trailing" constant="60" id="aOK-0w-XJQ"/>
+                            <constraint firstItem="TTE-uq-fdh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="x0n-bM-VD2"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="a5J-y5-EYG" id="5Aw-Jt-BxT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="118.52678571428571"/>
         </scene>
     </scenes>
 </document>
