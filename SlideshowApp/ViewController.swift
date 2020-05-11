@@ -10,10 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
-    
+
     var imageIndex = 0
     var timer: Timer!
     let images = [UIImage(named: "1"), UIImage(named: "2"), UIImage(named: "3")]
+    var y : Int = 0
+    @IBOutlet weak var Susumu: UIButton!
+    @IBOutlet weak var Modoru: UIButton!
+    @IBOutlet weak var Saisei: UIButton!
+    
+    @IBAction func unwind(_ segue: UIStoryboardSegue) {
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,10 +48,16 @@ class ViewController: UIViewController {
     }
     @IBAction func startPause(_ sender: Any) {
         if timer == nil {
-            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(onTimer(_:)), userInfo: nil, repeats: true)
+            Susumu.isEnabled = false;
+            Modoru.isEnabled = false;
+            Saisei.setTitle("停止", for: [])
+            timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(onTimer(_:)), userInfo: nil, repeats: true)
         } else {
             timer.invalidate()
+            Susumu.isEnabled = true;
+            Modoru.isEnabled = true;
             timer = nil
+            Saisei.setTitle("再生", for: [])
         }
     }
     @objc func onTimer(_ timer: Timer) {
@@ -56,5 +69,26 @@ class ViewController: UIViewController {
             }
             imageView.image = images[imageIndex]
     }
+    
+    
+    
+    @IBAction func tap(_ sender: Any) {
+        if imageIndex == 1{
+            y = 1
+        } else if imageIndex == 2{
+            y = 2
+        } else if imageIndex == 3 {
+            y = 3
+        }
+        
+        }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // segueから遷移先のResultViewControllerを取得する
+        let resultViewController:ResultViewController = segue.destination as! ResultViewController
+        // 遷移先のResultViewControllerで宣言しているxに値を代入して渡す
+        resultViewController.x = y
+    }
+    }
 
-}
+
+
