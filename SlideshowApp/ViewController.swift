@@ -14,7 +14,6 @@ class ViewController: UIViewController {
     var imageIndex = 0
     var timer: Timer!
     let images = [UIImage(named: "1"), UIImage(named: "2"), UIImage(named: "3")]
-    var y : Int = 0
     @IBOutlet weak var Susumu: UIButton!
     @IBOutlet weak var Modoru: UIButton!
     @IBOutlet weak var Saisei: UIButton!
@@ -26,7 +25,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         imageView.image = images[0]
-        y = imageIndex
     }
 
     @IBAction func next(_ sender: Any) {
@@ -74,14 +72,6 @@ class ViewController: UIViewController {
     
     
     @IBAction func tap(_ sender: Any) {
-        if imageIndex == 0{
-            y = 0
-        } else if imageIndex == 1 {
-            y = 1
-        } else if imageIndex == 2 {
-            y = 2
-        }
-        
         }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // segueから遷移先のResultViewControllerを取得する
