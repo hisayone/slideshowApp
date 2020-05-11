@@ -13,7 +13,7 @@ class ViewController: UIViewController {
 
     var imageIndex = 0
     var timer: Timer!
-    let images = [UIImage(named: "1"), UIImage(named: "2"), UIImage(named: "3")]
+    let images = [UIImage(named: "1.jpg"), UIImage(named: "2.jpg"), UIImage(named: "3.jpg")]
     @IBOutlet weak var Susumu: UIButton!
     @IBOutlet weak var Modoru: UIButton!
     @IBOutlet weak var Saisei: UIButton!
