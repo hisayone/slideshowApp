@@ -26,6 +26,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         imageView.image = images[0]
+        y = imageIndex
     }
 
     @IBAction func next(_ sender: Any) {
@@ -73,12 +74,12 @@ class ViewController: UIViewController {
     
     
     @IBAction func tap(_ sender: Any) {
-        if imageIndex == 1{
+        if imageIndex == 0{
+            y = 0
+        } else if imageIndex == 1 {
             y = 1
-        } else if imageIndex == 2{
+        } else if imageIndex == 2 {
             y = 2
-        } else if imageIndex == 3 {
-            y = 3
         }
         
         }
@@ -86,7 +87,7 @@ class ViewController: UIViewController {
         // segueから遷移先のResultViewControllerを取得する
         let resultViewController:ResultViewController = segue.destination as! ResultViewController
         // 遷移先のResultViewControllerで宣言しているxに値を代入して渡す
-        resultViewController.x = y
+        resultViewController.x = imageIndex
     }
     }
 

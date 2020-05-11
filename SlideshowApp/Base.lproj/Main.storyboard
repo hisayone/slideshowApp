@@ -62,8 +62,8 @@
                                     <constraint firstAttribute="height" constant="180" id="9Uo-iw-wbh"/>
                                 </constraints>
                                 <connections>
-                                    <action selector="tap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vUs-7w-9Cl"/>
-                                    <segue destination="vTa-GT-i6R" kind="show" id="Haa-K9-FNe"/>
+                                    <action selector="tap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yTb-0i-Gkf"/>
+                                    <segue destination="vTa-GT-i6R" kind="show" id="OKg-a6-Uu2"/>
                                 </connections>
                             </button>
                         </subviews>
