@@ -72,6 +72,11 @@ class ViewController: UIViewController {
     
     
     @IBAction func tap(_ sender: Any) {
+        if timer == nil {
+        } else {
+            timer.invalidate()
+        }
+        
         }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // segueから遷移先のResultViewControllerを取得する

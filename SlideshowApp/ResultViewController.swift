@@ -10,6 +10,21 @@ import UIKit
 
 class ResultViewController: UIViewController {
     @IBOutlet weak var imageview2: UIImageView!
+
+    @IBAction func back(_ sender: Any) {
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // segueから遷移先のViewControllerを取得する
+        let ViewController:ViewController = segue.destination as! ViewController
+        // 遷移先のResultViewControllerで宣言しているxに値を代入して渡す
+        ViewController.Saisei.setTitle("再生", for: [])
+        ViewController.timer = nil
+        ViewController.Susumu.isEnabled = true;
+        ViewController.Modoru.isEnabled = true;
+    }
+    
+
     var imageIndex = 0
     let images = [UIImage(named: "1"), UIImage(named: "2"), UIImage(named: "3")]
     var x : Int = 0

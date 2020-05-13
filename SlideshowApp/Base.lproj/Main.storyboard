@@ -109,6 +109,7 @@
                                 </constraints>
                                 <state key="normal" title="戻る"/>
                                 <connections>
+                                    <action selector="back:" destination="vTa-GT-i6R" eventType="touchUpInside" id="jT1-cY-9H8"/>
                                     <segue destination="n2s-Yf-3hF" kind="unwind" unwindAction="unwind:" id="SuJ-sh-Oll"/>
                                 </connections>
                             </button>
@@ -137,7 +138,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AtD-cX-GXH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="n2s-Yf-3hF" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1107.2463768115942" y="100.44642857142857"/>
+            <point key="canvasLocation" x="935" y="119"/>
         </scene>
     </scenes>
 </document>
