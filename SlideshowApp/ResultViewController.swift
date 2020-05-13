@@ -26,7 +26,7 @@ class ResultViewController: UIViewController {
     
 
     var imageIndex = 0
-    let images = [UIImage(named: "1"), UIImage(named: "2"), UIImage(named: "3")]
+    let images = [UIImage(named: "11.jpg"), UIImage(named: "22.jpg"), UIImage(named: "33.jpg")]
     var x : Int = 0
 
     override func viewDidLoad() {
